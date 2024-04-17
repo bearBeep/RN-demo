@@ -4,52 +4,36 @@
  *
  * @format
  */
-
-import React, { useCallback, useEffect } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-} from 'react-native';
+import React, { useCallback } from 'react'
+import { SafeAreaView, ScrollView, StatusBar, Text } from 'react-native'
 import setup from './src/setup'
 
 function App(): React.JSX.Element {
-  var [isInited, setIsInited] = React.useState(false);
-
-  useEffect(() => {
-    init();
-    return () => {
-    };
-  }, []);
+  var [isInited, setIsInited] = React.useState(false)
 
   const init = useCallback(async () => {
-    await setup();
+    await setup()
+    setIsInited(true)
   }, [])
+
+  init()
 
   const renderView = (
     <>
-      <SafeAreaView >
+      <SafeAreaView>
         <StatusBar />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-        >
-          <Text>
-            123
-          </Text>
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <Text>123</Text>
         </ScrollView>
       </SafeAreaView>
     </>
   )
 
   if (!isInited) {
-    return <></>;
+    return <></>
   }
 
-  return renderView;
+  return renderView
 }
 
-
-export default App;
+export default App

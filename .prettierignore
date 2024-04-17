@@ -1,0 +1,8 @@
+ios/
+node_modules/
+.vscode/
+__tests__/
+android/
+builds/
+*/build/
+.eslintrc.js

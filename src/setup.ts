@@ -1,11 +1,6 @@
-
-export default async () => {
-
-}
+export default async () => {}
 
 /** config setup */
-export const setup = () => {
+export const setup = () => {}
 
-};
-
-setup();
+setup()

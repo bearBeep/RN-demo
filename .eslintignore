@@ -1,0 +1,9 @@
+ios/
+node_modules/
+.vscode/
+__tests__/
+android/
+builds/
+*/build/
+metro.config.js
+.eslintrc.js
