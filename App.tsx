@@ -6,7 +6,7 @@
  */
 import React, { useCallback } from 'react'
 import { SafeAreaView, ScrollView, StatusBar, Text } from 'react-native'
-import setup from './src/setup'
+import setup from './src/setup';
 
 function App(): React.JSX.Element {
   var [isInited, setIsInited] = React.useState(false)
