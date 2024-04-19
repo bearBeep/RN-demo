@@ -4,9 +4,9 @@
  *
  * @format
  */
-import React, { useCallback } from 'react'
-import { SafeAreaView, ScrollView, StatusBar, Text } from 'react-native'
-import setup from './src/setup';
+import React, { Fragment, useCallback, useMemo } from 'react'
+import DevPage from './src/pages/dev/devPage/index'
+import setup from './src/setup'
 
 function App(): React.JSX.Element {
   var [isInited, setIsInited] = React.useState(false)
@@ -18,16 +18,13 @@ function App(): React.JSX.Element {
 
   init()
 
-  const renderView = (
-    <>
-      <SafeAreaView>
-        <StatusBar />
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Text>123</Text>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  )
+  const renderView = useMemo(() => {
+    return (
+      <>
+        <DevPage />
+      </>
+    )
+  }, [])
 
   if (!isInited) {
     return <></>
