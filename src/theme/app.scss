@@ -1,26 +1,35 @@
-$primary-color: firebrick;
+$theme-config: (
+  'light': 'light',
+  'dark': 'dark',
+);
+$app-config: (
+  'appId': 'mx-one',
+  'module-component': 'component',
+);
+$theme-light: (
+  'primary-color': red,
+);
+$theme-dark: (
+  'primary-color': blue,
+);
 
-$appId: 'mx-one';
-$module-component: 'component';
-
-$staus-light: 'light';
-$staus-dark: 'dark';
-
-.#{$appId} {
-  &-#{$staus-light} {
-    &-#{$module-component} {
+.#{map-get($app-config, 'appId')} {
+  // 亮色模式
+  &-#{map-get($theme-config, 'light')} {
+    &-#{map-get($app-config, 'module-component')} {
       &-text {
-        font-size: 20px;
-        color: $primary-color;
+        font-size: 40px;
+        color: map-get($theme-light, 'primary-color');
       }
     }
   }
 
-  &-#{$staus-dark} {
-    &-#{$module-component} {
+  // 暗色模式
+  &-#{map-get($theme-config, 'dark')} {
+    &-#{map-get($app-config, 'module-component')} {
       &-text {
-        font-size: 20px;
-        color: $primary-color;
+        font-size: 40px;
+        color: map-get($theme-dark, 'primary-color');
       }
     }
   }
