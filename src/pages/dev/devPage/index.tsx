@@ -1,16 +1,20 @@
 import { SafeAreaView, ScrollView, StatusBar, Text } from 'react-native'
 import styles from '../../../theme/app.scss'
-import { EAppIdPrefix, EModulePrefix } from '../../../theme/config'
-import { Fragment } from 'react'
+import { EAppIdPrefix, EModulePrefix, EThemePrefix } from '../../../theme/config'
+import { Fragment, useMemo } from 'react'
 
-const PREFIX = `${EAppIdPrefix.MX_ONE}-${EModulePrefix.COMPONENT}`
 const DevPage = (): React.ReactElement => {
+  const status: EThemePrefix = EThemePrefix.LIGHT
+  const prifix = useMemo(() => {
+    return `${EAppIdPrefix.MX_ONE}-${status}-${EModulePrefix.COMPONENT}`
+  }, [])
+
   return (
     <Fragment>
       <SafeAreaView>
         <StatusBar />
         <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Text style={styles[`${PREFIX}-text`]}>123</Text>
+          <Text style={styles[`${prifix}-text`]}>123</Text>
         </ScrollView>
       </SafeAreaView>
     </Fragment>

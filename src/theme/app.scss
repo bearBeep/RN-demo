@@ -1,9 +1,27 @@
-$appId: 'mx-one';
-$module: 'component';
+$primary-color: firebrick;
 
-.#{$appId}-#{$module} {
-  &-text {
-    font-size: 20px;
-    color: firebrick;
+$appId: 'mx-one';
+$module-component: 'component';
+
+$staus-light: 'light';
+$staus-dark: 'dark';
+
+.#{$appId} {
+  &-#{$staus-light} {
+    &-#{$module-component} {
+      &-text {
+        font-size: 20px;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &-#{$staus-dark} {
+    &-#{$module-component} {
+      &-text {
+        font-size: 20px;
+        color: $primary-color;
+      }
+    }
   }
 }

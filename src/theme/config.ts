@@ -14,7 +14,13 @@ enum EModulePrefix {
     "COMPONENT" = 'component',
 }
 
+enum EThemePrefix {
+    "LIGHT" = 'light',
+    "DARK" = 'dark'
+}
+
 export {
     EAppIdPrefix,
-    EModulePrefix
+    EModulePrefix,
+    EThemePrefix
 }
