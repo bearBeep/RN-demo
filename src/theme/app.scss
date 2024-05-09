@@ -6,10 +6,10 @@ $app-config: (
   'appId': 'mx-one',
   'module-component': 'component',
 );
-$theme-light: (
+$theme-color-light: (
   'primary-color': red,
 );
-$theme-dark: (
+$theme-color-dark: (
   'primary-color': blue,
 );
 
@@ -19,7 +19,7 @@ $theme-dark: (
     &-#{map-get($app-config, 'module-component')} {
       &-text {
         font-size: 40px;
-        color: map-get($theme-light, 'primary-color');
+        color: map-get($theme-color-light, 'primary-color');
       }
     }
   }
@@ -29,7 +29,7 @@ $theme-dark: (
     &-#{map-get($app-config, 'module-component')} {
       &-text {
         font-size: 40px;
-        color: map-get($theme-dark, 'primary-color');
+        color: map-get($theme-color-dark, 'primary-color');
       }
     }
   }

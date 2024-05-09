@@ -1,7 +1,8 @@
-import { SafeAreaView, ScrollView, StatusBar, Text, useColorScheme } from 'react-native'
+import { SafeAreaView, ScrollView, StatusBar, useColorScheme, Text } from 'react-native'
 import styles from '../../../theme/app.scss'
 import { EAppIdPrefix, EModulePrefix, EThemePrefix } from '../../../theme/config'
 import { Fragment, useEffect, useMemo, useState } from 'react'
+
 
 const DevPage = (): React.ReactElement => {
   const theme = useColorScheme(); 

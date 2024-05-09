@@ -5,7 +5,7 @@
  * @format
  */
 import React, { Fragment, useCallback, useMemo } from 'react'
-import DevPage from './src/pages/dev/devPage/index'
+import Route from './src/routes/index'
 import setup from './src/setup'
 
 function App(): React.JSX.Element {
@@ -21,7 +21,7 @@ function App(): React.JSX.Element {
   const renderView = useMemo(() => {
     return (
       <>
-        <DevPage />
+        <Route />
       </>
     )
   }, [])
