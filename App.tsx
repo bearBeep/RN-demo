@@ -1,36 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-import React, { Fragment, useCallback, useMemo } from 'react'
-import Route from './src/routes/index'
-import setup from './src/setup'
+import React from 'react'
+import Route from './src/routes'
+import { theme, darkTheme } from './src/theme';
+import { ThemeContext } from './src/context/themeContext';
+import { useColorScheme } from 'react-native';
 
 function App(): React.JSX.Element {
-  var [isInited, setIsInited] = React.useState(false)
+  const themeMode = useColorScheme();
 
-  const init = useCallback(async () => {
-    await setup()
-    setIsInited(true)
-  }, [])
-
-  init()
-
-  const renderView = useMemo(() => {
-    return (
-      <>
-        <Route />
-      </>
-    )
-  }, [])
-
-  if (!isInited) {
-    return <></>
-  }
-
-  return renderView
+  return <>
+    <ThemeContext.Provider value={themeMode === 'light' ? theme : darkTheme}>
+      <Route />
+    </ThemeContext.Provider>
+  </>
 }
 
 export default App

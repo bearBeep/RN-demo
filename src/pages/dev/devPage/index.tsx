@@ -1,25 +1,31 @@
-import { SafeAreaView, ScrollView, StatusBar, useColorScheme, Text } from 'react-native'
-import styles from '../../../theme/app.scss'
-import { EAppIdPrefix, EModulePrefix, EThemePrefix } from '../../../theme/config'
-import { Fragment, useEffect, useMemo, useState } from 'react'
+import { SafeAreaView, ScrollView } from 'react-native';
+import { Box, Text } from "../../../components"
 
+import React from 'react';
 
 const DevPage = (): React.ReactElement => {
-  const theme = useColorScheme(); 
-  const prifix = useMemo(() => {
-    return `${EAppIdPrefix.MX_ONE}-${theme}-${EModulePrefix.COMPONENT}`
-  }, [theme])
-
   return (
-    <Fragment>
+    <>
       <SafeAreaView>
-        <StatusBar />
         <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Text style={styles[`${prifix}-text`]}>123</Text>
+          <Box
+            margin="m"
+            padding={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}
+            backgroundColor="primary"
+            style={{
+              width: 200,
+              height: 200,
+            }}
+          >
+            <Text style={{}} variant="header" color="success">123</Text>
+          </Box>
+
         </ScrollView>
       </SafeAreaView>
-    </Fragment>
+    </>
+
   )
 }
 
 export default DevPage
+

@@ -1,4 +1,4 @@
-import { Alert, Button, Text, TextInput, View } from 'react-native'
+import { Alert, Button, TextInput, View } from 'react-native'
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DevPage from '../pages/dev/devPage/index';
@@ -35,12 +35,15 @@ const customTransition = SharedTransition.custom((values) => {
 });
 
 function HomeScreen({ navigation }) {
-    console.log("Animated >", Animated.Image)
+    const handlePress = () => {
+        console.log('in')
+        navigation.navigate('Details')
+    }
     return (
         <View style={{ flex: 1, alignItems: 'center' }}>
             <Button
                 title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
+                onPress={handlePress}
             />
             <Animated.Image
                 source={{ uri: 'https://picsum.photos/id/39/200' }}
@@ -132,7 +135,7 @@ export default function App() {
                 </Tab.Screen>
                 <Tab.Screen name="SecondTab" >
                     {() => (
-                        <SettingStack.Navigator screenOptions={{ presentation: 'modal' }}>
+                        <SettingStack.Navigator>
                             <SettingStack.Screen name="Settings" component={SettingsScreen} />
                         </SettingStack.Navigator>
                     )}
