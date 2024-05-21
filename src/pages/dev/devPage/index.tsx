@@ -1,31 +1,34 @@
-import { SafeAreaView, ScrollView } from 'react-native';
-import { Box, Text } from "../../../components"
-
+import Animated, {
+  useSharedValue,
+  useFrameCallback,
+  useAnimatedStyle,
+  withSequence,
+  withTiming,
+  Easing,
+} from 'react-native-reanimated';
+import { View, StyleSheet, Pressable, Text } from 'react-native';
 import React from 'react';
 
-const DevPage = (): React.ReactElement => {
+export default function CardView() {
+  const exiting = (values) => {
+    'worklet';
+    const animations = {
+      originX: withTiming(width, { duration: 3000 }),
+      opacity: withTiming(0.5, { duration: 2000 }),
+    };
+    const initialValues = {
+      originX: values.currentOriginX,
+      opacity: 1,
+    };
+    return {
+      initialValues,
+      animations,
+    };
+  };
+
   return (
-    <>
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Box
-            margin="m"
-            padding={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}
-            backgroundColor="primary"
-            style={{
-              width: 200,
-              height: 200,
-            }}
-          >
-            <Text style={{}} variant="header" color="success">123</Text>
-          </Box>
-
-        </ScrollView>
-      </SafeAreaView>
-    </>
-
-  )
+    <Animated.View style={[styles.animatedView]} exiting={exiting}>
+      <Text> Card Example </Text>
+    </Animated.View>
+  );
 }
-
-export default DevPage
-

@@ -15,7 +15,8 @@
     "precommit": "lint-staged",
     "postinstall": "patch-package",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "ts-coverage": "typescript-coverage-report"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
@@ -33,6 +34,7 @@
     "react": "18.2.0",
     "react-native": "0.73.6",
     "react-native-reanimated": "3.11.0",
+    "react-native-reanimated-carousel": "^3.5.1",
     "react-native-safe-area-context": "^4.10.1",
     "react-native-screens": "^3.31.1",
     "react-native-svg": "^15.2.0"
@@ -55,10 +57,12 @@
     "eslint": "7.32.0",
     "jest": "^29.6.3",
     "patch-package": "6.4.7",
+    "react-dom": "^18.3.1",
     "react-native-sass-transformer": "^2.1.1",
     "react-test-renderer": "18.2.0",
     "sass": "^1.75.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "typescript-coverage-report": "0.6.4"
   },
   "engines": {
     "node": ">=18"
@@ -68,5 +72,8 @@
       "yarn prettier && yarn eslint",
       "git add ."
     ]
+  },
+  "typeCoverage": {
+    "atLeast": 100
   }
 }

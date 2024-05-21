@@ -1,0 +1,176 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>index.tsx</title>
+      <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" type="text/css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/javascript/javascript.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css" type="text/css" rel="stylesheet">
+<script src="../../../assets/source-file.js" type="text/javascript" charset="utf-8"></script>
+<link href="../../../assets/source-file.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+    <div style="margin-top:3em" class="ui container"><h1 class="ui header"><a href="../../../index.html">TypeScript coverage report</a></h1><table style="margin-top:2em" class="ui celled table"><thead class=""><tr class=""><th class="">Filename</th><th class="">Percent</th><th class="">Threshold</th><th class="">Total</th><th class="">Covered</th><th class="">Uncovered</th></tr></thead><tbody class=""><tr class="negative"><td class="">src/routes/index.tsx</td><td class="">91.84%</td><td class="">100%</td><td class="">196</td><td class="">180</td><td class="">16</td></tr></tbody></table><textarea id="editor" readonly="" style="margin-top:3em">import { Alert, Button, TextInput, View } from &#x27;react-native&#x27;
+import { NavigationContainer, DefaultTheme } from &#x27;@react-navigation/native&#x27;;
+import { createBottomTabNavigator } from &#x27;@react-navigation/bottom-tabs&#x27;;
+import DevPage from &#x27;../pages/dev/devPage/index&#x27;;
+import Animated, { SharedTransition, withSpring } from &#x27;react-native-reanimated&#x27;;
+import { createNativeStackNavigator } from &#x27;@react-navigation/native-stack&#x27;;
+import { Box, Text } from &quot;../components&quot;
+import React from &#x27;react&#x27;;
+
+const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+        /** 底部导航栏选中颜色 */
+        primary: &#x27;rgb(255, 45, 85)&#x27;,
+        /** 每个Screen的背景颜色 */
+        background: &#x27;rgb(242, 242, 242)&#x27;,
+        /** 导航栏背景颜色 */
+        card: &#x27;rgb(255, 255, 255)&#x27;,
+        /** 导航栏文字颜色 */
+        text: &#x27;rgb(28, 28, 30)&#x27;,
+        /** 底部导航栏边框颜色 */
+        border: &#x27;rgb(199, 199, 204)&#x27;,
+        notification: &#x27;rgb(255, 69, 58)&#x27;,
+    },
+};
+
+
+const customTransition = SharedTransition.custom((values) =&gt; {
+    &#x27;worklet&#x27;;
+    return {
+        height: withSpring(values.targetHeight),
+        width: withSpring(values.targetWidth),
+        originX: withSpring(values.targetOriginX),
+        originY: withSpring(values.targetOriginY),
+    };
+});
+
+function HomeScreen({ navigation }) {
+    const handlePress = () =&gt; {
+        console.log(&#x27;in&#x27;)
+        navigation.navigate(&#x27;Details&#x27;)
+    }
+    return (
+        &lt;View style={{ flex: 1, alignItems: &#x27;center&#x27; }}&gt;
+            &lt;Button
+                title=&quot;Go to Details&quot;
+                onPress={handlePress}
+            /&gt;
+            &lt;Animated.Image
+                source={{ uri: &#x27;https://picsum.photos/id/39/200&#x27; }}
+                style={{ width: 300, height: 300 }}
+                sharedTransitionTag=&quot;tag&quot;
+                sharedTransitionStyle={customTransition} // add this to both elements on both screens
+            /&gt;
+            &lt;Box
+                margin=&quot;m&quot;
+                padding={{ smallPhone: &#x27;xs&#x27;, phone: &#x27;s&#x27;, tablet: &#x27;m&#x27; }}
+                backgroundColor=&quot;primary&quot;
+                style={{
+                    width: 200,
+                    height: 200,
+                }}
+            &gt;
+                &lt;Text style={{}} variant=&quot;header&quot; color=&quot;success&quot;&gt;123&lt;/Text&gt;
+            &lt;/Box&gt;
+        &lt;/View&gt;
+    );
+}
+
+function DetailsScreen({ navigation }) {
+    const [text, setText] = React.useState(&#x27;&#x27;);
+    const hasUnsavedChanges = Boolean(text);
+
+    React.useEffect(
+        () =&gt;
+            navigation.addListener(&#x27;beforeRemove&#x27;, (e) =&gt; {
+                if (!hasUnsavedChanges) {
+                    // If we don&#x27;t have unsaved changes, then we don&#x27;t need to do anything
+                    return;
+                }
+
+                // Prevent default behavior of leaving the screen
+                e.preventDefault();
+
+                // Prompt the user before leaving the screen
+                Alert.alert(
+                    &#x27;Discard changes?&#x27;,
+                    &#x27;You have unsaved changes. Are you sure to discard them and leave the screen?&#x27;,
+                    [
+                        { text: &quot;Don&#x27;t leave&quot;, style: &#x27;cancel&#x27;, onPress: () =&gt; { } },
+                        {
+                            text: &#x27;Discard&#x27;,
+                            style: &#x27;destructive&#x27;,
+                            // If the user confirmed, then we dispatch the action we blocked earlier
+                            // This will continue the action that had triggered the removal of the screen
+                            onPress: () =&gt; navigation.dispatch(e.data.action),
+                        },
+                    ]
+                );
+            }),
+        [navigation, hasUnsavedChanges]
+    );
+
+    return (
+        &lt;View style={{ flex: 1, alignItems: &#x27;center&#x27; }}&gt;
+            &lt;Button title=&quot;Go back&quot; onPress={() =&gt; navigation.goBack()} /&gt;
+            &lt;Animated.Image
+                source={{ uri: &#x27;https://picsum.photos/id/39/200&#x27; }}
+                style={{ width: 100, height: 100 }}
+                sharedTransitionTag=&quot;tag&quot;
+                sharedTransitionStyle={customTransition}
+            /&gt;
+            &lt;TextInput
+                value={text}
+                placeholder=&quot;Type something…&quot;
+                onChangeText={setText}
+            /&gt;
+        &lt;/View&gt;
+    );
+}
+
+function SettingsScreen() {
+    return (
+        &lt;DevPage /&gt;
+    );
+}
+
+const Tab = createBottomTabNavigator();
+const HomeStack = createNativeStackNavigator();
+const SettingStack = createNativeStackNavigator();
+
+export default function App() {
+    return (
+        /**
+         * @param 
+         *  theme 配置底部选中时的颜色
+         */
+        &lt;NavigationContainer theme={MyTheme}&gt;
+            &lt;Tab.Navigator screenOptions={{ headerShown: false }}&gt;
+                &lt;Tab.Screen name=&quot;HomeTab&quot;&gt;
+                    {() =&gt; (
+                        &lt;HomeStack.Navigator&gt;
+                            &lt;HomeStack.Screen name=&quot;Home&quot; component={HomeScreen} /&gt;
+                            &lt;HomeStack.Screen name=&quot;Details&quot; component={DetailsScreen} /&gt;
+                        &lt;/HomeStack.Navigator&gt;
+                    )}
+                &lt;/Tab.Screen&gt;
+                &lt;Tab.Screen name=&quot;SecondTab&quot; &gt;
+                    {() =&gt; (
+                        &lt;SettingStack.Navigator&gt;
+                            &lt;SettingStack.Screen name=&quot;Settings&quot; component={SettingsScreen} /&gt;
+                        &lt;/SettingStack.Navigator&gt;
+                    )}
+                &lt;/Tab.Screen&gt;
+            &lt;/Tab.Navigator&gt;
+        &lt;/NavigationContainer&gt;
+    );
+}
+</textarea><pre id="annotations" style="display:none">[{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:37,&quot;character&quot;:22,&quot;text&quot;:&quot;navigation&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:40,&quot;character&quot;:8,&quot;text&quot;:&quot;navigation&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:40,&quot;character&quot;:19,&quot;text&quot;:&quot;navigate&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:69,&quot;character&quot;:25,&quot;text&quot;:&quot;navigation&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:75,&quot;character&quot;:12,&quot;text&quot;:&quot;navigation&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:75,&quot;character&quot;:23,&quot;text&quot;:&quot;addListener&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:75,&quot;character&quot;:52,&quot;text&quot;:&quot;e&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:82,&quot;character&quot;:16,&quot;text&quot;:&quot;e&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:82,&quot;character&quot;:18,&quot;text&quot;:&quot;preventDefault&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:95,&quot;character&quot;:43,&quot;text&quot;:&quot;navigation&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:95,&quot;character&quot;:54,&quot;text&quot;:&quot;dispatch&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:95,&quot;character&quot;:63,&quot;text&quot;:&quot;e&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:95,&quot;character&quot;:65,&quot;text&quot;:&quot;data&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:95,&quot;character&quot;:70,&quot;text&quot;:&quot;action&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:105,&quot;character&quot;:51,&quot;text&quot;:&quot;navigation&quot;,&quot;kind&quot;:1},{&quot;file&quot;:&quot;src/routes/index.tsx&quot;,&quot;line&quot;:105,&quot;character&quot;:62,&quot;text&quot;:&quot;goBack&quot;,&quot;kind&quot;:1}]</pre></div>
+    <p class="footer-text">TypeScript Coverage Report generated by <a href="https://github.com/plantain-00/type-coverage">type-coverage</a> and <a href="https://github.com/alexcanessa/typescript-coverage-report">typescript-coverage-report</a> at Tue, 21 May 2024 02:29:34 GMT</p>
+    </body>
+  </html>
+  

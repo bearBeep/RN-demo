@@ -1,0 +1,380 @@
+{
+  "fileCounts": {},
+  "anys": [
+    {
+      "file": "src/pages/dev/devPage/index.tsx",
+      "line": 12,
+      "character": 19,
+      "text": "values",
+      "kind": 1
+    },
+    {
+      "file": "src/pages/dev/devPage/index.tsx",
+      "line": 19,
+      "character": 6,
+      "text": "originX",
+      "kind": 1
+    },
+    {
+      "file": "src/pages/dev/devPage/index.tsx",
+      "line": 19,
+      "character": 15,
+      "text": "values",
+      "kind": 1
+    },
+    {
+      "file": "src/pages/dev/devPage/index.tsx",
+      "line": 19,
+      "character": 22,
+      "text": "currentOriginX",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 1,
+      "character": 38,
+      "text": "theme",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 1,
+      "character": 45,
+      "text": "dimensions",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 2,
+      "character": 45,
+      "text": "theme",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 2,
+      "character": 51,
+      "text": "breakpoints",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 3,
+      "character": 9,
+      "text": "valA",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 3,
+      "character": 20,
+      "text": "valB",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 4,
+      "character": 19,
+      "text": "valA",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 4,
+      "character": 29,
+      "text": "valB",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 9,
+      "character": 12,
+      "text": "dimensions",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 9,
+      "character": 23,
+      "text": "width",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 15,
+      "character": 30,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 15,
+      "character": 37,
+      "text": "dimensions",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 15,
+      "character": 49,
+      "text": "theme",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 16,
+      "character": 15,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 17,
+      "character": 15,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 17,
+      "character": 50,
+      "text": "theme",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 17,
+      "character": 57,
+      "text": "dimensions",
+      "kind": 1
+    },
+    {
+      "file": "src/components/utils.ts",
+      "line": 19,
+      "character": 11,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 11,
+      "character": 15,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 11,
+      "character": 22,
+      "text": "padding",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 11,
+      "character": 31,
+      "text": "margin",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 11,
+      "character": 39,
+      "text": "backgroundColor",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 19,
+      "character": 55,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 19,
+      "character": 62,
+      "text": "margin",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 22,
+      "character": 41,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 22,
+      "character": 48,
+      "text": "padding",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 26,
+      "character": 41,
+      "text": "value",
+      "kind": 1
+    },
+    {
+      "file": "src/components/box/index.tsx",
+      "line": 26,
+      "character": 48,
+      "text": "backgroundColor",
+      "kind": 1
+    },
+    {
+      "file": "src/components/text/index.tsx",
+      "line": 10,
+      "character": 16,
+      "text": "style",
+      "kind": 1
+    },
+    {
+      "file": "src/components/text/index.tsx",
+      "line": 10,
+      "character": 23,
+      "text": "variant",
+      "kind": 1
+    },
+    {
+      "file": "src/components/text/index.tsx",
+      "line": 10,
+      "character": 32,
+      "text": "color",
+      "kind": 1
+    },
+    {
+      "file": "src/components/text/index.tsx",
+      "line": 16,
+      "character": 36,
+      "text": "color",
+      "kind": 1
+    },
+    {
+      "file": "src/components/text/index.tsx",
+      "line": 17,
+      "character": 38,
+      "text": "variant",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 37,
+      "character": 22,
+      "text": "navigation",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 40,
+      "character": 8,
+      "text": "navigation",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 40,
+      "character": 19,
+      "text": "navigate",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 69,
+      "character": 25,
+      "text": "navigation",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 75,
+      "character": 12,
+      "text": "navigation",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 75,
+      "character": 23,
+      "text": "addListener",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 75,
+      "character": 52,
+      "text": "e",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 82,
+      "character": 16,
+      "text": "e",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 82,
+      "character": 18,
+      "text": "preventDefault",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 95,
+      "character": 43,
+      "text": "navigation",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 95,
+      "character": 54,
+      "text": "dispatch",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 95,
+      "character": 63,
+      "text": "e",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 95,
+      "character": 65,
+      "text": "data",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 95,
+      "character": 70,
+      "text": "action",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 105,
+      "character": 51,
+      "text": "navigation",
+      "kind": 1
+    },
+    {
+      "file": "src/routes/index.tsx",
+      "line": 105,
+      "character": 62,
+      "text": "goBack",
+      "kind": 1
+    }
+  ],
+  "percentage": 89.33601609657947,
+  "total": 497,
+  "covered": 444,
+  "uncovered": 53
+}

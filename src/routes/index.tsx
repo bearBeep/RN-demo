@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DevPage from '../pages/dev/devPage/index';
 import Animated, { SharedTransition, withSpring } from 'react-native-reanimated';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Box, Text } from "../components"
 import React from 'react';
 
 const MyTheme = {
@@ -51,6 +52,17 @@ function HomeScreen({ navigation }) {
                 sharedTransitionTag="tag"
                 sharedTransitionStyle={customTransition} // add this to both elements on both screens
             />
+            <Box
+                margin="m"
+                padding={{ smallPhone: 'xs', phone: 's', tablet: 'm' }}
+                backgroundColor="primary"
+                style={{
+                    width: 200,
+                    height: 200,
+                }}
+            >
+                <Text style={{}} variant="header" color="success">123</Text>
+            </Box>
         </View>
     );
 }
